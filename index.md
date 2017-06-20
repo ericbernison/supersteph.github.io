@@ -1,3 +1,3 @@
-[WORD2VEC](..word2vec.md)
+[WORD2VEC](word2vec.md)
 <br/>
 [GloVE](glove.md)
