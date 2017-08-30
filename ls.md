@@ -1,3 +1,11 @@
+---
+layout: post
+comments: true
+title:  "Deep Reinforcement Learning: Pong from Pixels"
+excerpt: "I'll discuss the core ideas, pros and cons of policy gradients, a standard approach to the rapidly growing and exciting area of deep reinforcement learning. As a running example we'll learn to play ATARI 2600 Pong from raw pixels."
+date:   2016-05-31 11:00:00
+mathjax: true
+---
 You have just quit your job, you are faced with the problem with whether you want to go to school or whether you should go directly to work. You decide that you should gather data to find out the relationship between the amount of education versus the salary.
 
 Regression
