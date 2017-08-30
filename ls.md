@@ -22,16 +22,9 @@ The basic idea is that we are trying to find the ß’s (coefficients) that allo
 Objective Function
 
 We now want to find out  how we can measure how “good” our function is. We define the closeness of the function using this expression.
-$$
-\begin{align}
-\nabla_{\theta} E_x[f(x)] &= \nabla_{\theta} \sum_x p(x) f(x) & \text{definition of expectation} \\
-& = \sum_x \nabla_{\theta} p(x) f(x) & \text{swap sum and gradient} \\
-& = \sum_x p(x) \frac{\nabla_{\theta} p(x)}{p(x)} f(x) & \text{both multiply and divide by } p(x) \\
-& = \sum_x p(x) \nabla_{\theta} \log p(x) f(x) & \text{use the fact that } \nabla_{\theta} \log(z) = \frac{1}{z} \nabla_{\theta} z \\
-& = E_x[f(x) \nabla_{\theta} \log p(x) ] & \text{definition of expectation}
-\end{align}
-$$
-
+<br/>
+\\( R\_t = \sum\_{k=0}^{\infty} \gamma^k r\_{t+k} \\)
+<br/>
 This value can be thought of as the loss of that function. The objective of our model is to minimize this loss. Since β0+β1*xi is our function yi-β0+β1*xi is going to be a measure of how close our function is to the actual value. 
 The reason why we square the  yi-β0+β1*xi expression is for two reasons 
 1. We want all the differences to be the same sign so that when we add them together the signs won’t cancel each other out. 
