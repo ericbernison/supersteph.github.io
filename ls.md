@@ -31,7 +31,7 @@ Objective Function
 
 We now want to find out  how we can measure how “good” our function is. We define the closeness of the function using this expression.
 <br/>
-\\( R\_t = \sum\_{k=0}^{\infty} \gamma^k r\_{t+k} \\)
+\sum_{k=0}^{n} 
 <br/>
 This value can be thought of as the loss of that function. The objective of our model is to minimize this loss. Since β0+β1*xi is our function yi-β0+β1*xi is going to be a measure of how close our function is to the actual value. 
 The reason why we square the  yi-β0+β1*xi expression is for two reasons 
