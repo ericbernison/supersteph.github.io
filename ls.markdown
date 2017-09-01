@@ -31,7 +31,7 @@ We now want to find out  how we can measure how “good” our function is. We d
 <br/>
 ![alt text](https://github.com/supersteph/supersteph.github.io/blob/master/images/CodeCogsEqn.gif "equation") 
 <br/>
-This value can be thought of as the loss of that function. The objective of our model is to minimize this loss. Since β0+β1*xi is our function yi-β0+β1*xi is going to be a measure of how close our function is to the actual value. 
+This value can be thought of as the loss of that function. The objective of our model is to minimize this loss. Since β0+β1*xi is our function y<sub>i<sub/>-β0+β1*xi is going to be a measure of how close our function is to the actual value. 
 The reason why we square the  yi-β0+β1*xi expression is for two reasons 
 1. We want all the differences to be the same sign so that when we add them together the signs won’t cancel each other out. 
 And  
