@@ -1,11 +1,4 @@
----
-layout: post
-comments: true
-title:  "Deep Reinforcement Learning: Pong from Pixels"
-excerpt: "I'll discuss the core ideas, pros and cons of policy gradients, a standard approach to the rapidly growing and exciting area of deep reinforcement learning. As a running example we'll learn to play ATARI 2600 Pong from raw pixels."
-date:   2016-05-31 11:00:00
-mathjax: true
----
+
 You have just quit your job, you are faced with the problem with whether you want to go to school or whether you should go directly to work. You decide that you should gather data to find out the relationship between the amount of education versus the salary.
 
 Regression
@@ -14,9 +7,13 @@ To find this function we use a technique called regression. This technique, at i
 
 
 Given our data
-[picture of data]
+<br/>
+![alt text](https://github.com/supersteph/supersteph.github.io/blob/master/images/Screenshot%202017-08-31%20at%2010.27.01%20AM.png "data")
+<br/>
 We are trying to find a function like this
-[picture of line that fits data]
+<br/>
+![alt text](https://github.com/supersteph/supersteph.github.io/blob/master/images/Screenshot%202017-08-31%20at%205.13.52%20PM.png "data with line")
+<br/>
 As you can see, this line minimizes the distance between each point and the line.
 
 Least squares regression
@@ -24,6 +21,7 @@ Least squares regression
 We first introduce the most basic type of regression: least square regression. This approach, allows us to find the desired function.
 
 The basic idea is that we are trying to find the ß’s (coefficients) that allow this function to be as close to our data as possible
+<br/>
 β0+β1*xi
 
 
@@ -31,7 +29,7 @@ Objective Function
 
 We now want to find out  how we can measure how “good” our function is. We define the closeness of the function using this expression.
 <br/>
-\sum_{k=0}^{n} 
+![alt text](https://github.com/supersteph/supersteph.github.io/blob/master/images/CodeCogsEqn.gif "equation") 
 <br/>
 This value can be thought of as the loss of that function. The objective of our model is to minimize this loss. Since β0+β1*xi is our function yi-β0+β1*xi is going to be a measure of how close our function is to the actual value. 
 The reason why we square the  yi-β0+β1*xi expression is for two reasons 
