@@ -31,8 +31,8 @@ We now want to find out  how we can measure how “good” our function is. We d
 <br/>
 ![alt text](https://github.com/supersteph/supersteph.github.io/blob/master/images/CodeCogsEqn.gif "equation") 
 <br/>
-This value can be thought of as the loss of that function. The objective of our model is to minimize this loss. Since β0+β1*xi is our function y<sub>i<sub/>-β0+β1*xi is going to be a measure of how close our function is to the actual value. 
-The reason why we square the  yi-β0+β1*xi expression is for two reasons 
+This value can be thought of as the loss of that function. The objective of our model is to minimize this loss. Since β0+β1*xi is our function y<sub>i</sub>-β<sub>0</sub>+β<sub>1</sub>*x<sub>i</sub> is going to be a measure of how close our function is to the actual value. 
+The reason why we square the  y<sub>i</sub>-β<sub>0</sub>+β<sub>1</sub>*x<sub>i</sub> expression is for two reasons 
 1. We want all the differences to be the same sign so that when we add them together the signs won’t cancel each other out. 
 And  
 2. We want our function be close to every single point instead of being on one point and being far from all of the other points. When the squared function is used, larger values are now going to be exponentially larger, therefore (additionally) discouraging large outliers. By adding the squared term, it is now more efficient to have all of our values consistently close to the actual function rather than having our model hit a point and be completely off basis for other points.
@@ -43,10 +43,10 @@ For example, if our function looks like this
 [picture of non linear graph]
 Our function is obviously going to try and find the linear way of getting this when this function is obviously not linear.
 We design a structure that can support functions that aren’t only linear.
-A, a vector of size N*m, is going to represent the outline of the function. Each element in A is a separate vector that depends solely on the value of the ith input (xi). The process of mapping an xi to the corresponding Ai is the same process every time. Given the xi there are going to be m functions that you put it through, and each result is kept separate to form an m sized vector: Ai.
+A, a vector of size N*m, is going to represent the outline of the function. Each element in A is a separate vector that depends solely on the value of the ith input (x<sub>i</sub>). The process of mapping an x<sub>i</sub> to the corresponding A<sub>i</sub> is the same process every time. Given the x<sub>i</sub> there are going to be m functions that you put it through, and each result is kept separate to form an m sized vector: A<sub>i</sub>.
 β, a vector of size m, is going to be our inputs.
 
-In the our case our Ai vector would look like this {1,x_i}. Our β is going to be in the form of {β0,β1}. Once we dot product these two vectors together it is going to form the expression that we are trying to optimize.
+In the our case our Ai vector would look like this {1,x<sub>i</sub>}. Our β is going to be in the form of {β<sub>0</sub>,β<sub>1</sub>}. Once we dot product these two vectors together it is going to form the expression that we are trying to optimize.
 
 
  
