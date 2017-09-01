@@ -16,13 +16,13 @@ We are trying to find a function like this
 <br/>
 As you can see, this line minimizes the distance between each point and the line.
 
-##Least squares regression
+## Least squares regression
 
 We first introduce the most basic type of regression: least square regression. This approach, allows us to find the desired function.
 
 The basic idea is that we are trying to find the ß’s (coefficients) that allow this function to be as close to our data as possible
 <br/>
-β0+β1*xi
+β<sub>0</sub>+β<sub>1</sub>*x<sub>i</sub>
 
 
 ## Objective Function
@@ -31,7 +31,7 @@ We now want to find out  how we can measure how “good” our function is. We d
 <br/>
 ![alt text](https://github.com/supersteph/supersteph.github.io/blob/master/images/CodeCogsEqn.gif "equation") 
 <br/>
-This value can be thought of as the loss of that function. The objective of our model is to minimize this loss. Since β0+β1*xi is our function y<sub>i</sub>-β<sub>0</sub>+β<sub>1</sub>*x<sub>i</sub> is going to be a measure of how close our function is to the actual value. 
+This value can be thought of as the loss of that function. The objective of our model is to minimize this loss. Since β<sub>0</sub>+β<sub>1</sub>*x<sub>i</sub> is our function y<sub>i</sub>-β<sub>0</sub>+β<sub>1</sub>*x<sub>i</sub> is going to be a measure of how close our function is to the actual value. 
 The reason why we square the  y<sub>i</sub>-β<sub>0</sub>+β<sub>1</sub>*x<sub>i</sub> expression is for two reasons 
 1. We want all the differences to be the same sign so that when we add them together the signs won’t cancel each other out. 
 And  
