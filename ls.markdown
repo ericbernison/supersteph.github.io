@@ -1,7 +1,7 @@
-
+#Introduction to Regression
 You have just quit your job, you are faced with the problem with whether you want to go to school or whether you should go directly to work. You decide that you should gather data to find out the relationship between the amount of education versus the salary.
 
-Regression
+##Regression
 
 To find this function we use a technique called regression. This technique, at its core, is about finding the best function to fit the data that is provided. In the next part we go through the lasso regression technique and in the future we show how it can be applied to more complex models to solve tasks such as digit recognition.
 
@@ -16,7 +16,7 @@ We are trying to find a function like this
 <br/>
 As you can see, this line minimizes the distance between each point and the line.
 
-Least squares regression
+##Least squares regression
 
 We first introduce the most basic type of regression: least square regression. This approach, allows us to find the desired function.
 
@@ -25,7 +25,7 @@ The basic idea is that we are trying to find the ß’s (coefficients) that allo
 β0+β1*xi
 
 
-Objective Function
+##Objective Function
 
 We now want to find out  how we can measure how “good” our function is. We define the closeness of the function using this expression.
 <br/>
@@ -37,7 +37,7 @@ The reason why we square the  yi-β0+β1*xi expression is for two reasons
 And  
 2. We want our function be close to every single point instead of being on one point and being far from all of the other points. When the squared function is used, larger values are now going to be exponentially larger, therefore (additionally) discouraging large outliers. By adding the squared term, it is now more efficient to have all of our values consistently close to the actual function rather than having our model hit a point and be completely off basis for other points.
 
-Expansion
+##Expansion
 Our model is solely responsible for finding the coefficients in our function; we are not concerned with the function that we plug our coefficients into. When we have a functions that are not linear we need syntax for it.
 For example, if our function looks like this
 [picture of non linear graph]
@@ -46,7 +46,7 @@ We design a structure that can support functions that aren’t only linear.
 A, a vector of size N*m, is going to represent the outline of the function. Each element in A is a separate vector that depends solely on the value of the ith input (xi). The process of mapping an xi to the corresponding Ai is the same process every time. Given the xi there are going to be m functions that you put it through, and each result is kept separate to form an m sized vector: Ai.
 β, a vector of size m, is going to be our inputs.
 
-In the our case our Ai vector would look like this {1,xi}. Our β is going to be in the form of {β0,β1}. Once we dot product these two vectors together it is going to form the expression that we are trying to optimize.
+In the our case our Ai vector would look like this {1,x_i}. Our β is going to be in the form of {β0,β1}. Once we dot product these two vectors together it is going to form the expression that we are trying to optimize.
 
 
  
