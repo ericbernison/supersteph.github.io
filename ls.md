@@ -17,10 +17,9 @@ Given our data
 <br/>
 We are trying to find a function like this
 <br/>
-![alt text](/images/Screenshot%202017-08-31%20at%205.13.52%20PM.png "data with line")
 
 <div class="imgcap">
-<img src="/assets/rl/preview.jpeg">
+<img src="/images/Screenshot%202017-08-31%20at%205.13.52%20PM.png">
 <div class="thecap">Examples of RL in the wild. <b>From left to right</b>: Deep Q Learning network playing ATARI, AlphaGo, Berkeley robot stacking Legos, physically-simulated quadruped leaping over terrain.</div>
 </div>
 <br/>
