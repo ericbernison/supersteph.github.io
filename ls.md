@@ -8,11 +8,11 @@ To find this function we use a technique called regression. This technique, at i
 
 Given our data
 <br/>
-![alt text](https://github.com/supersteph/supersteph.github.io/blob/master/images/Screenshot%202017-08-31%20at%2010.27.01%20AM.png "data")
+![alt text](/images/Screenshot%202017-08-31%20at%2010.27.01%20AM.png "data")
 <br/>
 We are trying to find a function like this
 <br/>
-![alt text](https://github.com/supersteph/supersteph.github.io/blob/master/images/Screenshot%202017-08-31%20at%205.13.52%20PM.png "data with line")
+![alt text](/images/Screenshot%202017-08-31%20at%205.13.52%20PM.png "data with line")
 <br/>
 As you can see, this line minimizes the distance between each point and the line.
 
@@ -29,7 +29,7 @@ The basic idea is that we are trying to find the ß’s (coefficients) that allo
 
 We now want to find out  how we can measure how “good” our function is. We define the closeness of the function using this expression.
 <br/>
-![alt text](https://github.com/supersteph/supersteph.github.io/blob/master/images/CodeCogsEqn.gif "equation") 
+![alt text](/images/CodeCogsEqn.gif "equation") 
 <br/>
 This value can be thought of as the loss of that function. The objective of our model is to minimize this loss. Since β<sub>0</sub>+β<sub>1</sub>*x<sub>i</sub> is our function y<sub>i</sub>-β<sub>0</sub>+β<sub>1</sub>*x<sub>i</sub> is going to be a measure of how close our function is to the actual value. 
 The reason why we square the  y<sub>i</sub>-β<sub>0</sub>+β<sub>1</sub>*x<sub>i</sub> expression is for two reasons 
@@ -41,7 +41,7 @@ And
 Our model is solely responsible for finding the coefficients in our function; we are not concerned with the function that we plug our coefficients into. When we have a functions that are not linear we need syntax for it.
 For example, if our function looks like this
 </br>
-![alt text](https://github.com/supersteph/supersteph.github.io/blob/master/images/nmpMg.png "non linear") 
+![alt text](/images/nmpMg.png "non linear") 
 <br/>
 Our function is obviously going to try and find the linear way of getting this when this function is obviously not linear.
 We design a structure that can support functions that aren’t only linear.
