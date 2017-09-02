@@ -10,7 +10,7 @@ Given our data
 <br/>
 
 <div class="imgcap">
-<img src="/assets/rl/preview.jpeg">
+<img src="/images/Screenshot%202017-08-31%20at%2010.27.01%20AM.png">
 <div class="thecap">Examples of RL in the wild. <b>From left to right</b>: Deep Q Learning network playing ATARI, AlphaGo, Berkeley robot stacking Legos, physically-simulated quadruped leaping over terrain.</div>
 </div>
 
