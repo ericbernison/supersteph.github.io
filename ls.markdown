@@ -40,7 +40,7 @@ And
 ## Expansion
 Our model is solely responsible for finding the coefficients in our function; we are not concerned with the function that we plug our coefficients into. When we have a functions that are not linear we need syntax for it.
 For example, if our function looks like this
-![alt text](https:github.com/supersteph/supersteph.github.io/blob/master/images/nmpMg.png "non linear") 
+![alt text](https://github.com/supersteph/supersteph.github.io/blob/master/images/nmpMg.png "non linear") 
 Our function is obviously going to try and find the linear way of getting this when this function is obviously not linear.
 We design a structure that can support functions that aren’t only linear.
 A, a vector of size N*m, is going to represent the outline of the function. Each element in A is a separate vector that depends solely on the value of the ith input (x<sub>i</sub>). The process of mapping an x<sub>i</sub> to the corresponding A<sub>i</sub> is the same process every time. Given the x<sub>i</sub> there are going to be m functions that you put it through, and each result is kept separate to form an m sized vector: A<sub>i</sub>.
