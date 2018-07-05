@@ -6,4 +6,4 @@
 <br/>
 [Regression](ls.md)
 <br/>
-[Tic Tac Toe])(tictac/index.html)
+[Tic Tac Toe](tictac/index.html)
