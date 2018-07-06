@@ -7,3 +7,6 @@
 [Regression](ls.md)
 <br/>
 [Tic Tac Toe](tictac/index.html)
+<br/>
+[Sketcher Test](sketcher/index.html)
+
