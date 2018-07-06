@@ -247,5 +247,6 @@ function erase() {
     coords = [];
 }
 
+model = tf.loadModel('model2/model.json')
 //start the script 
 start();
