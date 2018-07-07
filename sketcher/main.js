@@ -247,6 +247,7 @@
 //     coords = [];
 // }
 
-model = tf.loadModel('model2/model.json')
+model = tf.loadModel('model2/model.json');
+console.log("successfully loaded model");
 //start the script 
 // start();
