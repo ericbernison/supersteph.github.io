@@ -248,6 +248,6 @@
 // }
 
 model = tf.loadModel('tfjs/model.json');
-console.log("successfully loaded model");
+console.log("hopefully using new model?");
 //start the script 
 // start();
