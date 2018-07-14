@@ -2,7 +2,7 @@
 
 console.log("HELLO I AM HERE");
 
-const model = tf.loadModel('tfjs/model.json');  
+const model = tf.loadModel('model/model.json');  
 // var x = "/krestik.gif";
 // var o = "/nolik.gif";
 // var blank = "/blank.jpg";
