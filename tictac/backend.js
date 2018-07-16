@@ -1,6 +1,6 @@
 
 
-console.log("HELLO I AM HERE");
+console.log("fuck me");
 
 const model = tf.loadModel('model/model.json');  
 // var x = "/krestik.gif";
