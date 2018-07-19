@@ -1,6 +1,6 @@
 
 
-console.log("getting better?");
+console.log("hope this fails");
 
 const model = tf.loadModel('model/model.json');  
 // var x = "/krestik.gif";
