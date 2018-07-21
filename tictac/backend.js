@@ -1,6 +1,6 @@
 
 
-console.log("without memory");
+console.log("without the plot model thing");
 
 const model = tf.loadModel('model/model.json');  
 // var x = "/krestik.gif";
