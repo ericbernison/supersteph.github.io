@@ -1,6 +1,6 @@
 
 
-console.log("without the plot model thing");
+console.log("test");
 
 const model = tf.loadModel('model/model.json');  
 // var x = "/krestik.gif";
