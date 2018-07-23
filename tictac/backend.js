@@ -11,10 +11,10 @@ async function start() {
 
     const test = tf.tensor(testarray,[2,3,3,1]);
     //load the model 
-    model = await tf.loadModel('model/model.json')
+    model = await tf.loadModel('model/model.json');
     
     //warm up 
-    const output = model.predict(test)
+    const output = model.predict(tf.zeros([2,3,3,1]));
     console.log(output)
 }
 
