@@ -3,6 +3,12 @@
 console.log("hi yinger");
 
 const model = tf.loadModel('model/model.json');  
+
+var testarray = [[[1,0,0],[0,0,0],[0,0,0],],[[0,0,0],[0,-1,0],[0,0,0]]];
+
+const test = tf.tensor(testarray);
+const output = model.predict(test);
+console.log(output);
 // var x = "/krestik.gif";
 // var o = "/nolik.gif";
 // var blank = "/blank.jpg";
