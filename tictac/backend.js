@@ -7,7 +7,7 @@ start();
 async function start() {
     //arabic or english
     
-    var testarray = [[[1,0,0],[0,0,0],[0,0,0],],[[0,0,0],[0,-1,0],[0,0,0]]];
+    var testarray = [[[[1,0,0],[0,0,0],[0,0,0],],[[0,0,0],[0,-1,0],[0,0,0]]]];
 
     const test = tf.tensor(testarray);
     //load the model 
