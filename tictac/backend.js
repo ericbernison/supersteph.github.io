@@ -7,9 +7,9 @@ start();
 async function start() {
     //arabic or english
     
-    var testarray = [[[[1,0,0],[0,0,0],[0,0,0],],[[0,0,0],[0,-1,0],[0,0,0]]]];
+    var testarray = [[[[1,0,0],[0,0,0],[0,0,0]],[[0,0,0],[0,-1,0],[0,0,0]]]];
 
-    const test = tf.tensor(testarray,[null,2,3,3]);
+    const test = tf.tensor(testarray,[,2,3,3]);
     //load the model 
     model = await tf.loadModel('model/model.json');
     
@@ -20,7 +20,7 @@ async function start() {
 
 
 // var x = "/krestik.gif";
-// var o = "/nolik.gif";
+// var o = "/nolik.gif";  
 // var blank = "/blank.jpg";
 // var pause = 0;
 // var all = 0;
