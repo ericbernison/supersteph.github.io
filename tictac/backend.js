@@ -14,7 +14,7 @@ async function start() {
     model = await tf.loadModel('model/model.json');
     
     //warm up 
-    const output = model.predict(tf.zeros([2,3,3,1]));
+    const output = model.predict(tf.zeros([null,2,3,3]));
     console.log(output)
 }
 
