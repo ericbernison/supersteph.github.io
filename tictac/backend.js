@@ -17,7 +17,10 @@ async function start() {
     
     //warm up 
     const output = model.predict(test);
-    console.log(output)
+    value_array = output[0];
+    logits_array = output[1];
+    console.log(value_array);
+    console.log(logits_array);
 }
 
 
