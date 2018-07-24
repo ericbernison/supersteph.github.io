@@ -9,7 +9,7 @@ async function start() {
     
     var testarray = [[[1,0,0],[0,0,0],[0,0,0]],[[0,0,0],[0,-1,0],[0,0,0]]];
 
-    const test = tf.tensor(testarray,[,2,3,3]);
+    const test = tf.tensor(testarray,[null,2,3,3]);
     //load the model 
     model = await tf.loadModel('model/model.json');
     
