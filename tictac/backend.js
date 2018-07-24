@@ -19,8 +19,9 @@ async function start() {
     const output = model.predict(test);
     value_array = output[0];
     logits_array = output[1];
-    console.log(typeof value_array);
-    console.log(typeof logits_array);
+    console.log(output)
+    console.log(value_array);
+    console.log(logits_array);
 }
 
 
