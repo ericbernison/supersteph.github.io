@@ -7,7 +7,7 @@ start();
 async function start() {
     //arabic or english
     
-    var testarray = [[[[1,0,0],[0,0,0],[0,0,0]],[[0,0,0],[0,-1,0],[0,0,0]]]];
+    var testarray = [[[[1,0,0],[0,0,0],[0,0,0]],[[0,0,0],[0,1,0],[0,0,0]]]];
 
     var test = tf.tensor(testarray);
 
@@ -17,8 +17,9 @@ async function start() {
     
     //warm up 
     const output = model.predict(test);
-    value_array = output[0].dataSync();
+    
     logits_array = output[1].dataSync();
+    console.log(logits_array);
 }
 
 
