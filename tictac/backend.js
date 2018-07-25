@@ -290,9 +290,10 @@ function indexOfMax(arr) {
 
 function ichoose(){
   const testarray = convert();
+  console.log(testarray);
   var test = tf.tensor(testarray);
   const output = model.predict(test);
-  const logits = output[0].dataSync();
+  const logits = output[1].dataSync();
   const choice = indexOfMax(logits);
   console.log(choice);
 
