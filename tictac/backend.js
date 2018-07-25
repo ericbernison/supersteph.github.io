@@ -19,9 +19,6 @@ async function start() {
     const output = model.predict(test);
     value_array = output[0].dataSync();
     logits_array = output[1].dataSync();
-    console.log(output)
-    console.log(value_array);
-    console.log(logits_array);
 }
 
 
@@ -126,77 +123,6 @@ function convert(){
   }
   return testarray;
 }
-function logicOne() {
-  if ((a==1)&&(b==1)&&(c==1)) all=1;
-  if ((a==1)&&(d==1)&&(g==1)) all=1;
-  if ((a==1)&&(e==1)&&(i==1)) all=1;
-  if ((b==1)&&(e==1)&&(h==1)) all=1;
-  if ((d==1)&&(e==1)&&(f==1)) all=1;
-  if ((g==1)&&(h==1)&&(i==1)) all=1;
-  if ((c==1)&&(f==1)&&(i==1)) all=1;
-  if ((g==1)&&(e==1)&&(c==1)) all=1;
-  if ((a==2)&&(b==2)&&(c==2)) all=2;
-  if ((a==2)&&(d==2)&&(g==2)) all=2;
-  if ((a==2)&&(e==2)&&(i==2)) all=2;
-  if ((b==2)&&(e==2)&&(h==2)) all=2;
-  if ((d==2)&&(e==2)&&(f==2)) all=2;
-  if ((g==2)&&(h==2)&&(i==2)) all=2;
-  if ((c==2)&&(f==2)&&(i==2)) all=2;
-  if ((g==2)&&(e==2)&&(c==2)) all=2;
-  if ((a != 0)&&(b != 0)&&(c != 0)&&(d != 0)&&(e != 0)&&(f != 0)&&(g != 0)&&(h != 0)&&(i != 0)&&(all == 0)) all = 3;
-} 
-function logicTwo() {
-  if ((a==2)&&(b==2)&&(c== 0)&&(temp=="")) temp="C";
-  if ((a==2)&&(b== 0)&&(c==2)&&(temp=="")) temp="B";
-  if ((a== 0)&&(b==2)&&(c==2)&&(temp=="")) temp="A";
-  if ((a==2)&&(d==2)&&(g== 0)&&(temp=="")) temp="G";
-  if ((a==2)&&(d== 0)&&(g==2)&&(temp=="")) temp="D";
-  if ((a== 0)&&(d==2)&&(g==2)&&(temp=="")) temp="A";
-  if ((a==2)&&(e==2)&&(i== 0)&&(temp=="")) temp="I";
-  if ((a==2)&&(e== 0)&&(i==2)&&(temp=="")) temp="E";
-  if ((a== 0)&&(e==2)&&(i==2)&&(temp=="")) temp="A";
-  if ((b==2)&&(e==2)&&(h== 0)&&(temp=="")) temp="H";
-  if ((b==2)&&(e== 0)&&(h==2)&&(temp=="")) temp="E";
-  if ((b== 0)&&(e==2)&&(h==2)&&(temp=="")) temp="B";
-  if ((d==2)&&(e==2)&&(f== 0)&&(temp=="")) temp="F";
-  if ((d==2)&&(e== 0)&&(f==2)&&(temp=="")) temp="E";
-  if ((d== 0)&&(e==2)&&(f==2)&&(temp=="")) temp="D";
-  if ((g==2)&&(h==2)&&(i== 0)&&(temp=="")) temp="I";
-  if ((g==2)&&(h== 0)&&(i==2)&&(temp=="")) temp="H";
-  if ((g== 0)&&(h==2)&&(i==2)&&(temp=="")) temp="G";
-  if ((c==2)&&(f==2)&&(i== 0)&&(temp=="")) temp="I";
-  if ((c==2)&&(f== 0)&&(i==2)&&(temp=="")) temp="F";
-  if ((c== 0)&&(f==2)&&(i==2)&&(temp=="")) temp="C";
-  if ((g==2)&&(e==2)&&(c== 0)&&(temp=="")) temp="C";
-  if ((g==2)&&(e== 0)&&(c==2)&&(temp=="")) temp="E";
-  if ((g== 0)&&(e==2)&&(c==2)&&(temp=="")) temp="G";
-}
-function logicThree() {
-  if ((a==1)&&(b==1)&&(c==0)&&(temp=="")) temp="C";
-  if ((a==1)&&(b==0)&&(c==1)&&(temp=="")) temp="B";
-  if ((a==0)&&(b==1)&&(c==1)&&(temp=="")) temp="A";
-  if ((a==1)&&(d==1)&&(g==0)&&(temp=="")) temp="G";
-  if ((a==1)&&(d==0)&&(g==1)&&(temp=="")) temp="D";
-  if ((a==0)&&(d==1)&&(g==1)&&(temp=="")) temp="A";
-  if ((a==1)&&(e==1)&&(i==0)&&(temp=="")) temp="I";
-  if ((a==1)&&(e==0)&&(i==1)&&(temp=="")) temp="E";
-  if ((a==0)&&(e==1)&&(i==1)&&(temp=="")) temp="A";
-  if ((b==1)&&(e==1)&&(h==0)&&(temp=="")) temp="H";
-  if ((b==1)&&(e==0)&&(h==1)&&(temp=="")) temp="E";
-  if ((b==0)&&(e==1)&&(h==1)&&(temp=="")) temp="B";
-  if ((d==1)&&(e==1)&&(f==0)&&(temp=="")) temp="F";
-  if ((d==1)&&(e==0)&&(f==1)&&(temp=="")) temp="E";
-  if ((d==0)&&(e==1)&&(f==1)&&(temp=="")) temp="D";
-  if ((g==1)&&(h==1)&&(i==0)&&(temp=="")) temp="I";
-  if ((g==1)&&(h==0)&&(i==1)&&(temp=="")) temp="H";
-  if ((g==0)&&(h==1)&&(i==1)&&(temp=="")) temp="G";
-  if ((c==1)&&(f==1)&&(i==0)&&(temp=="")) temp="I";
-  if ((c==1)&&(f==0)&&(i==1)&&(temp=="")) temp="F";
-  if ((c==0)&&(f==1)&&(i==1)&&(temp=="")) temp="C";
-  if ((g==1)&&(e==1)&&(c==0)&&(temp=="")) temp="C";
-  if ((g==1)&&(e==0)&&(c==1)&&(temp=="")) temp="E";
-  if ((g==0)&&(e==1)&&(c==1)&&(temp=="")) temp="G";
-}
 function clearOut() {
   document.game.you.value="0";
   document.game.computer.value="0";
@@ -294,6 +220,7 @@ function ichoose(){
   var test = tf.tensor(testarray);
   const output = model.predict(test);
   const logits = output[1].dataSync();
+  console.log(logits)
   const choice = indexOfMax(logits);
   console.log(choice);
 
