@@ -294,6 +294,7 @@ function ichoose(){
   const output = model.predict(test);
   const logits = output[0].dataSync();
   const choice = indexOfMax(logits);
+  console.log(choice);
 
   if(choice==0){
     temp="A";
