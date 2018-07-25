@@ -123,6 +123,25 @@ function convert(){
   }
   return testarray;
 }
+function logicOne() {
+  if ((a==1)&&(b==1)&&(c==1)) all=1;
+  if ((a==1)&&(d==1)&&(g==1)) all=1;
+  if ((a==1)&&(e==1)&&(i==1)) all=1;
+  if ((b==1)&&(e==1)&&(h==1)) all=1;
+  if ((d==1)&&(e==1)&&(f==1)) all=1;
+  if ((g==1)&&(h==1)&&(i==1)) all=1;
+  if ((c==1)&&(f==1)&&(i==1)) all=1;
+  if ((g==1)&&(e==1)&&(c==1)) all=1;
+  if ((a==2)&&(b==2)&&(c==2)) all=2;
+  if ((a==2)&&(d==2)&&(g==2)) all=2;
+  if ((a==2)&&(e==2)&&(i==2)) all=2;
+  if ((b==2)&&(e==2)&&(h==2)) all=2;
+  if ((d==2)&&(e==2)&&(f==2)) all=2;
+  if ((g==2)&&(h==2)&&(i==2)) all=2;
+  if ((c==2)&&(f==2)&&(i==2)) all=2;
+  if ((g==2)&&(e==2)&&(c==2)) all=2;
+  if ((a != 0)&&(b != 0)&&(c != 0)&&(d != 0)&&(e != 0)&&(f != 0)&&(g != 0)&&(h != 0)&&(i != 0)&&(all == 0)) all = 3;
+} 
 function clearOut() {
   document.game.you.value="0";
   document.game.computer.value="0";
@@ -220,7 +239,7 @@ function ichoose(){
   var test = tf.tensor(testarray);
   const output = model.predict(test);
   const logits = output[1].dataSync();
-  console.log(logits)
+  console.log(logits);
   const choice = indexOfMax(logits);
   console.log(choice);
 
