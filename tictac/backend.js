@@ -49,6 +49,83 @@ var t = 0;
 var wn = 0;
 var ls = 0;
 var ts = 0;
+
+function convert(){
+  var testarray = [[[[0,0,0],[0,0,0],[0,0,0]],[[0,0,0],[0,0,0],[0,0,0]]]]
+  if(a!=0){
+    if(a==1){
+      testarray[0][1][0][0]=-1;
+    }
+    else if(a==2){
+      testarray[0][0][0][0]=1;
+    }
+  }
+  if(b!=0){
+    if(b==1){
+      testarray[0][1][0][1]=-1;
+    }
+    else if(b==2){
+      testarray[0][0][0][1]=1;
+    }
+  }
+  if(c!=0){
+    if(c==1){
+      testarray[0][1][0][2]=-1;
+    }
+    else if(c==2){
+      testarray[0][0][0][2]=1;
+    }
+  }
+  if(d!=0){
+    if(d==1){
+      testarray[0][1][1][0]=-1;
+    }
+    else if(d==2){
+      testarray[0][0][1][0]=1;
+    }
+  }
+  if(e!=0){
+    if(e==1){
+      testarray[0][1][1][1]=-1;
+    }
+    else if(e==2){
+      testarray[0][0][1][1]=1;
+    }
+  }
+  if(f!=0){
+    if(f==1){
+      testarray[0][1][1][2]=-1;
+    }
+    else if(a==2){
+      testarray[0][0][1][2]=1;
+    }
+  }
+  if(g!=0){
+    if(g==1){
+      testarray[0][1][2][0]=-1;
+    }
+    else if(g==2){
+      testarray[0][0][2][0]=1;
+    }
+  }
+  if(h!=0){
+    if(h==1){
+      testarray[0][1][2][1]=-1;
+    }
+    else if(h==2){
+      testarray[0][0][2][1]=1;
+    }
+  }
+  if(i!=0){
+    if(i==1){
+      testarray[0][1][2][2]=-1;
+    }
+    if(i==2){
+      testarray[0][0][2][2]=1;
+    }
+  }
+  return testarray;
+}
 function logicOne() {
   if ((a==1)&&(b==1)&&(c==1)) all=1;
   if ((a==1)&&(d==1)&&(g==1)) all=1;
@@ -192,27 +269,66 @@ function taken() {
   alert("This cell in not empty! Try another")
   pause=1;
 }
+
+function indexOfMax(arr) {
+    if (arr.length === 0) {
+        return -1;
+    }
+
+    var max = arr[0];
+    var maxIndex = 0;
+
+    for (var i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
+            maxIndex = i;
+            max = arr[i];
+        }
+    }
+
+    return maxIndex;
+}
+
+function ichoose(){
+  const testarray = convert();
+  var test = tf.tensor(testarray);
+  const output = model.predict(test);
+  const logits = output[0].dataSync();
+  const choice = indexOfMax(logits);
+
+  if(choice==0){
+    temp="A";
+  }
+  if(choice==1){
+    temp="B";
+  }
+  if(choice==2){
+    temp="C";
+  }
+  if(choice==3){
+    temp="D";
+  }
+  if(choice==4){
+    temp="E";
+  }
+  if(choice==5){
+    temp="F";
+  }
+  if(choice==6){
+    temp="G";
+  }
+  if(choice==7){
+    temp="H";
+  }
+  if(choice==8){
+    temp="I";
+  }
+}
 function myChoice() {
   temp="";
   ok = 0;
   cf=1;
-  logicTwo();
-  logicThree();
+  ichoose();
   checkSpace();
-  while(ok==0) {
-    aRandomNumber=Math.random()
-    comp=Math.round((choice-1)*aRandomNumber)+1;
-    if (comp==1) temp="A";
-    if (comp==2) temp="B";
-    if (comp==3) temp="C";
-    if (comp==4) temp="D";
-    if (comp==5) temp="E";
-    if (comp==6) temp="F";
-    if (comp==7) temp="G";
-    if (comp==8) temp="H";
-    if (comp==9) temp="I";
-    checkSpace();
-  }
   document.images[temp].src= o;
   process();
 }
