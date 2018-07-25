@@ -51,7 +51,7 @@ function convert(){
   var testarray = [[[[0,0,0],[0,0,0],[0,0,0]],[[0,0,0],[0,0,0],[0,0,0]]]]
   if(a!=0){
     if(a==1){
-      testarray[0][1][0][0]=-1;
+      testarray[0][1][0][0]=1;
     }
     else if(a==2){
       testarray[0][0][0][0]=1;
@@ -59,7 +59,7 @@ function convert(){
   }
   if(b!=0){
     if(b==1){
-      testarray[0][1][0][1]=-1;
+      testarray[0][1][0][1]=1;
     }
     else if(b==2){
       testarray[0][0][0][1]=1;
@@ -67,7 +67,7 @@ function convert(){
   }
   if(c!=0){
     if(c==1){
-      testarray[0][1][0][2]=-1;
+      testarray[0][1][0][2]=1;
     }
     else if(c==2){
       testarray[0][0][0][2]=1;
@@ -75,7 +75,7 @@ function convert(){
   }
   if(d!=0){
     if(d==1){
-      testarray[0][1][1][0]=-1;
+      testarray[0][1][1][0]=1;
     }
     else if(d==2){
       testarray[0][0][1][0]=1;
@@ -83,7 +83,7 @@ function convert(){
   }
   if(e!=0){
     if(e==1){
-      testarray[0][1][1][1]=-1;
+      testarray[0][1][1][1]=1;
     }
     else if(e==2){
       testarray[0][0][1][1]=1;
@@ -91,7 +91,7 @@ function convert(){
   }
   if(f!=0){
     if(f==1){
-      testarray[0][1][1][2]=-1;
+      testarray[0][1][1][2]=1;
     }
     else if(a==2){
       testarray[0][0][1][2]=1;
@@ -99,7 +99,7 @@ function convert(){
   }
   if(g!=0){
     if(g==1){
-      testarray[0][1][2][0]=-1;
+      testarray[0][1][2][0]=1;
     }
     else if(g==2){
       testarray[0][0][2][0]=1;
@@ -107,7 +107,7 @@ function convert(){
   }
   if(h!=0){
     if(h==1){
-      testarray[0][1][2][1]=-1;
+      testarray[0][1][2][1]=1;
     }
     else if(h==2){
       testarray[0][0][2][1]=1;
@@ -115,7 +115,7 @@ function convert(){
   }
   if(i!=0){
     if(i==1){
-      testarray[0][1][2][2]=-1;
+      testarray[0][1][2][2]=1;
     }
     if(i==2){
       testarray[0][0][2][2]=1;
@@ -239,7 +239,7 @@ function ichoose(){
   var test = tf.tensor(testarray);
   const output = model.predict(test);
   const logits = output[1].dataSync();
-  console.log(logits);
+  console.log(logits);  
   const choice = indexOfMax(logits);
   console.log(choice);
 
