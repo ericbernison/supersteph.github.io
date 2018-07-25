@@ -233,14 +233,59 @@ function indexOfMax(arr) {
 
     return maxIndex;
 }
+function setnegative(logits){
+  if(a!=0){
+    logits[0] = -100
+  }
+  if(b!=0){
+    logits[1] = -100
+  }
+  if(c!=0){
+    logits[2] = -100
+  }
+  if(d!=0){
+    logits[3] = -100
+  }
+  if(e!=0){
+    logits[4] = -100
+  }
+  if(f!=0){
+    logits[5] = -100
+  }
+  if(g!=0){
+    logits[6] = -100
+  }
+  if(h!=0){
+    logits[7] = -100
+  }
+  if(g!=0){
+    logits[8] = -100
+  }
 
+  var outputs = [];
+  var sum = 0;
+  for(var i = 0; i<9;i++){
+    const temporary = Math.pow(Math.E,logits);
+    outputs.push(temporary);
+    sum = sum + temporary;
+  }
+
+  for(var i = 0; i<9;i++){
+    outputs[i]=outputs[i]/sum;
+  }
+
+  return outputs;
+
+
+}
 function ichoose(){
   const testarray = convert();
   console.log(testarray);
   var test = tf.tensor(testarray);
   const output = model.predict(test);
   const logits = output[1].dataSync();
-  console.log(logits);  
+  const newlogits = setnegative(logits);
+
   const choice = indexOfMax(logits);
   console.log(choice);
 
