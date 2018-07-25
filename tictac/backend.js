@@ -25,9 +25,9 @@ async function start() {
 }
 
 
-var x = "/krestik.gif";
-var o = "/nolik.gif";  
-var blank = "/blank.jpg";
+var x = "/tictac/krestik.gif";
+var o = "/tictac/nolik.gif";  
+var blank = "/tictac/blank.jpg";
 var pause = 0;
 var all = 0;
 var a = 0;
