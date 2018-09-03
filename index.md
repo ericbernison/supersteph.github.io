@@ -9,4 +9,6 @@
 [Tic Tac Toe](tictac/index.html)
 <br/>
 [Sketcher Test](sketcher/index.html)
+<br/>
+[blog ting](tictac/tictac.md)
 
