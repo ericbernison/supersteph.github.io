@@ -2,7 +2,7 @@
 # Basics of Tensorflow JS
 
 ## Introduction
-I had a keras model trained so that it could play tic tac toe. However, I wanted to be able to have an online demo so I could show people that I knew tensorflow. In this moment, there isn't a lot of ways to convert a model to javascript. I decided to try and use tensorflowjs because it seemed like the most easy-to-use way. So I followed the tensorflowjs guide and ran into a whole lot of errors.
+I had a keras model trained so that it could play tic tac toe. However, I wanted to be able to have an online demo so I could show people that I knew tensorflow. At this moment, there isn't a lot of ways to convert a model so that it can be used javascript. I decided to try and use tensorflowjs because it seemed like the most accessible way. So I followed the tensorflowjs guide and ran into a whole lot of errors.
 
 ## Getting model.json
 The first thing you would do is download the tensorflow js converter in pip.
@@ -10,30 +10,39 @@ The first thing you would do is download the tensorflow js converter in pip.
 pip install tensorflowjs
 ```
 (Note: you have to have a tensorflow version of 1.9 or higher for this to work.)
-First you need an h5 model. This is gotten by having trained keras model. Then you use the model.save() and get the h5 model which you can then use in this statement.
+
+I am going on the assumption that you already have a trained keras model, I used the code from AppliedDataSciencePartners and modified the code so that the model is learning tictactoe. With a Keras model you run this function
+```python
+model.save(run_folder+name+ '.h5')
+```
+
+With an h5 file in hand, you can run the following function.
 ```
 tensorflowjs_converter --input_format keras model.h5 target_dir
 ```
-If this runs successfully you should have a model.json file and a bunch of shards or something.
+If this runs successfully you should have a model.json file and a bunch of shards in the target_dir. The target_dir is going to make up the model.
+
 ## TensorflowJS in Javascript	
 There are two basic ways to set up your javascript file for tfjs.
-1. In the corresponding html file you add this statement
+1. In the html file where you reference your own js file you add this additional statement
 ```
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"> </script>
 ```
 2. In the begenning of the Javascript file add an import statement
-```
+```javascript
 import * as tf from '@tensorflow/tfjs';
 ```
-I would not recommend the second version because this would require you to set up tensorflow js in your server enviorment instead of just getting it from the web during run time which in my opinion is a easier solution. Of course, if you are crunched on time during run time you may want to use the second option
+I would not recommend the second version because this would require you to set up tensorflow js in your server enviorment instead of just getting it from the web during run time which in my opinion is a easier solution. Of course, if you are crunched on time during run time you may want to use the second option.
+
+In fact, it seems a lot more prone to error. In chrome when I run the second version I get an error where the compiler doesn't recognize the "*" symbol.
 
 Another thing to note about the tensors is the shape that they are expecting
 
-I had an error where tfjs complained about an error where they wanted a shape of [,2,3,3] and I gave them shape [2,3,3] this one infuriated me, but I added an extra diemension to my original array and it seemed to work.
+I had an error where tfjs complained about an error where they wanted a shape of [,2,3,3] and I gave them shape [2,3,3] but I added an extra diemension to my original array and it seemed to work. However, reshaping it directly to [,2,3,3] doesn't work. It needs to be in the shape of [1,2,3,3]
 
-Perhaps one of the most intersting things about tfjs is that when trying to use the model the tf.loadModel is set up as an callback function. If you don't want your entire script to be in a asynchronous then you can use an async function to set up the model like I did.
-
-```
+Perhaps one of the most intersting things about tfjs is that when trying to use the model the tf.loadModel is set up as an callback function. If you don't want your entire script to be asynchronous then you can use an async function to set up the model like I did and then call from a synchrounous.
+(If you want to know about async functions check [this](https://medium.com/codebuddies/getting-to-know-asynchronous-javascript-callbacks-promises-and-async-await-17e0673281ee) out)
+```python
 async function start() {
     //arabic or english
     
