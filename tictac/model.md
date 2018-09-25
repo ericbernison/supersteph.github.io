@@ -108,5 +108,20 @@ In our function, Q (the average value) is going to represent how likely you are 
 		return ((value, breadcrumbs))
 
 ```
-This is going to be the expansion part of MCTS. Which is pretty much the exact same as the textbook MCTS defintion
+This is going to be the expansion part of MCTS. Which is pretty much the exact same as the textbook MCTS defintion.
+
+```python
+for edge in breadcrumbs:
+	playerTurn = edge.playerTurn
+	if playerTurn == currentPlayer:
+		direction = 1
+	else:
+		direction = -1
+
+	edge.stats['N'] = edge.stats['N'] + 1
+	edge.stats['W'] = edge.stats['W'] + value * direction
+	edge.stats['Q'] = edge.stats['W'] / edge.stats['N']
+
+```
+Pretty standard backfill code. Go up the edges of the tree and update them as you go along.
 
