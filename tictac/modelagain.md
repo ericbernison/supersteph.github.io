@@ -53,8 +53,9 @@ def conv_layer(self, x, filters, kernel_size):
 	#have 75 4x4 kernels form the convolution layer
 
 	x = BatchNormalization(axis=1)(x)
+	#normalize batches to allow the gradients to converge faster
 	x = LeakyReLU()(x)
-	#Activation Function that is needed in Deep Networks
+	#Activation Function that is needed in Deep Networks to be effecive
 
 	return (x)
 ```
@@ -64,7 +65,7 @@ However, with deeper models, there is a new problem introduced: Gradient vanishi
 
 ```python
 x = self.conv_layer(input_block, filters, kernel_size)	
-
+#Have the previous convolution layer
 x = Conv2D(
 filters = filters
 , kernel_size = kernel_size
@@ -78,8 +79,82 @@ filters = filters
 x = BatchNormalization(axis=1)(x)
 
 x = add([input_block, x])
-
+#adds the input to the output to preserve gradients
 x = LeakyReLU()(x)
-
+#basically another convolution layer
 return (x)
 ```
+
+##Value Head and Policy Head
+
+```python
+	def value_head(self, x):
+
+		x = Conv2D(
+		filters = 1
+		, kernel_size = (1,1)
+		, data_format="channels_first"
+		, padding = 'same'
+		, use_bias=False
+		, activation='linear'
+		, kernel_regularizer = regularizers.l2(self.reg_const)
+		)(x)
+
+
+		x = BatchNormalization(axis=1)(x)
+		x = LeakyReLU()(x)
+
+		x = Flatten()(x)
+		#Flatten inputs
+		x = Dense(
+			20
+			, use_bias=False
+			, activation='linear'
+			, kernel_regularizer=regularizers.l2(self.reg_const)
+			)(x)
+
+		x = LeakyReLU()(x)
+
+		x = Dense(
+			1
+			, use_bias=False
+			, activation='tanh'
+			, kernel_regularizer=regularizers.l2(self.reg_const)
+			, name = 'value_head'+str(self.version_number)
+			)(x)
+
+		#Use two dense layers to turn the shape into [b,1]
+
+
+		return (x)
+
+	def policy_head(self, x):
+
+		x = Conv2D(
+		filters = 2
+		, kernel_size = (1,1)
+		, data_format="channels_first"
+		, padding = 'same'
+		, use_bias=False
+		, activation='linear'
+		, kernel_regularizer = regularizers.l2(self.reg_const)
+		)(x)
+
+		x = BatchNormalization(axis=1)(x)
+		x = LeakyReLU()(x)
+
+		x = Flatten()(x)
+
+		x = Dense(
+			self.output_dim
+			, use_bias=False
+			, activation='linear'
+			, kernel_regularizer=regularizers.l2(self.reg_const)
+			, name = 'policy_head'+str(self.version_number)
+			)(x)
+		#Convert shape to outputdim so that they can be used as logits [b,output_dim]
+		return (x)
+```
+For both the value_head function and policy_head function we start off with a Convolution layer with kernels of size 1. Then, we use Dense layers (xW+b) to shape the layers into the desired shapes.
+
+# Training
