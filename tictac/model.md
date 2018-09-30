@@ -132,3 +132,4 @@ for edge in breadcrumbs:
 ```
 Pretty standard backfill code. Go up the edges of the tree and update them as you go along.
 
+[next part (model)](supersteph.github.io/tictac/modelagain.md)

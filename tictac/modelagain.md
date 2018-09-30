@@ -1,7 +1,8 @@
+#Model
 With the MCTS Algorithim in place, we turn our attention to the model.
 Our model is going to take in a game state and return a float estimating the value of that state, and a logit array.
 
-In other words are model is composed of two sub-models a model to get the value and one to get the predictions.
+In other words are model is composed of two sub-models a model to get the value of the current state and one to get the predictions for the actions that should be taken.
 
 ```python
 main_input = Input(shape = self.input_dim, name = 'main_input')
@@ -11,10 +12,11 @@ x = self.conv_layer(main_input, self.hidden_layers[0]['filters'], self.hidden_la
 if len(self.hidden_layers) > 1:
 	for h in self.hidden_layers[1:]:
 		x = self.residual_layer(x, h['filters'], h['kernel_size'])
-
+#get the value and policy
 vh = self.value_head(x)
 ph = self.policy_head(x)
 
+#set the model as a dual output
 model = Model(inputs=[main_input], outputs=[vh, ph])
 model.compile(loss={'value_head'+str(self.version_number): 'mean_squared_error', 'policy_head'+str(self.version_number): softmax_cross_entropy_with_logits},
 	optimizer=SGD(lr=self.learning_rate, momentum = config.MOMENTUM),	
@@ -23,17 +25,14 @@ model.compile(loss={'value_head'+str(self.version_number): 'mean_squared_error',
 
 ```
 
-The model is set up like the following.
-
 ## Why Deep Networks
 Hypothetically, having a model that is one hidden layer would be able be able to produce similar results to any Deep Networks, so why do it?
 
-There are multiple reasons for this, first, while it is mathmatically possible. By creating a wide models it ends up with a function that is approximating the real function rather than getting the smooth function.
+There are multiple reasons for this structure. First, while it is mathmatically possible to emulate a deep model with a wide model. By creating a wide models it ends up emulating the function rather than actually being the function.
 
+By creating a function with multiple layers with nonlinearities on each function, it allows the predictions to use relatively little weights, compared to the wide model. Therefore it creates a smoother model, and it actually learns the task at hand.
 
-By creating a function with multiple layers that are pooled as you get to the top you'd also be able to address different things in different layers.
-
-For example, at the bottom layer of a model, what you are concerened with is the movement of the pawns.	And perhaps, at the higher level, you would be worrying about how the different pieces protect each other.
+For example, at the bottom layer of a model, what you are concerened with is the movement of the pawns.	And perhaps, at the higher level, you would be worrying about how the different pieces protect each other. I raise these examples because it shows how you start from a local task, and it goes up the layers and addresses the total problem.
 
 ## Our Model
 With the logic to use deep networks to abstract things. Our model consists of a stack of Convolutional layers using pooling.
@@ -157,4 +156,4 @@ return (x)
 ```
 For both the value_head function and policy_head function we start off with a Convolution layer with kernels of size 1. Then, we use Dense layers (xW+b) to shape the layers into the desired shapes.
 
-# Training
+[next part (tfjs)](supersteph.github.io/tictac/tictac.md)
