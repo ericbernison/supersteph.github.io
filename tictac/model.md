@@ -8,13 +8,13 @@ Let's take a simple example of Tic Tac Toe. In this game, (and most other games)
 In Tic Tac Toe a state would be a board and any configuration of X's and O's in it with each configuration being a different state. However, not every configuration is going to be a state, as only states that are possible to reach following the rules of the game are considered valid game states.
 
 A move is the way that you would play the game. Of course in tic tac toe not every single move is possible. For example, if a square already has an x placed on it you wouldn't be able to place another x on it. Another characteristic of a move is that it has the ability to move you to another state. (In some games, doing nothing could be a move) In Tic Tac Toe, however, making a move would guarantee that you get to another state
-![alt text](https://github.com/supersteph.github.io/tictac/emptystate.gif "empty state")
+![alt text](emptystate.gif "empty state")
 (This is an game state where there are 9 possible moves next turn)
 
 A game tree would be composed of states and moves. Where states are the nodes of the tree and moves are the edges along the tree.
 In tic tac toe, the starting node would always be an empty 3x3 grid. From the starting node, there are 9 possible moves that are going to lead to a new state.
 
-![alt text](https://github.com/supersteph.github.io/tictac/tree.png "game tree")
+![alt text](tree.png "game tree")
 
 Notice on layer 1 where the states just consist of a X in one position. These are all going to be leaf nodes of the root node since you can get to these states from the root node. This is not going to be the full tree, however you can imagine that there are nine leaf nodes on the layer below the root node.
 
@@ -27,12 +27,12 @@ The first part is going to be selection. Assuming you have a tree in place, howe
 ![alt text](https://github.com/supersteph.github.io/tictac/selection.jpeg "selection")
 Then the next part is expanding. You choose a random leaf node from the node that you selected and add it to your tree.
 
-![alt text](https://github.com/supersteph.github.io/tictac/expansion.jpeg "expansion")
+![alt text](expansion.jpeg "expansion")
 
 Then you simulate. In conventional MCTS you randomly move until you reach an ending state. You keep track of the wins and losses.
-![alt text](https://github.com/supersteph.github.io/tictac/simulation.jpeg "simulation")
+![alt text](simulation.jpeg "simulation")
 Then you backpropogate. You go up the tree that you have in place and depending on whether you won or lost you update the values in each node accordingly, in hopes for a better understanding of how that node is.
-![alt text](https://github.com/supersteph.github.io/tictac/backprop.jpeg "backprop")
+![alt text](backprop.jpeg "backprop")
 ### In the Model
 While our MCTS algorithim shares many similarities to the conventional MCTS, it also has many differences. The main one being that instead of simulating randomly, we basically trust our model to handle simulating. And, in the selection process we incorporate our model predictions in the function behind choosing the path to the leaf node. We also add every node in the expansion, instead of only doing one.
 
