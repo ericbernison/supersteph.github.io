@@ -156,4 +156,4 @@ return (x)
 ```
 For both the value_head function and policy_head function we start off with a Convolution layer with kernels of size 1. Then, we use Dense layers (xW+b) to shape the layers into the desired shapes.
 
-[next part (tfjs)](supersteph.github.io/tictac/tictac.md)
+[next part (tfjs)](tictac/tictac.md)

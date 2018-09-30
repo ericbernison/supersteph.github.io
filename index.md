@@ -12,3 +12,5 @@
 <br/>
 [blog ting](tictac/tictac.md)
 
+<br/>
+[part 1](tictac/model.md)
