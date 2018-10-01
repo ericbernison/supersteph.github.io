@@ -153,7 +153,7 @@ style="font-family: MS Sans Serif; font-size: 1"></font></td>
 </table>
 </center></div>
 
-<div align="center"><center><p><input id ="button"
+<div align="center"><center><p><button id ="button"
 innerHTML="New Game"
 style="font-family: MS Sans Serif; font-size: 1; font-weight: bold"> </p>
 </center></div>
