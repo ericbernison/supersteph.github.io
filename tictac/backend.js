@@ -342,7 +342,7 @@ function process() {
 }
 function playAgain() {
   if (all==0) {
-    if(confirm("Âû óâåðåíû ?")) reset();
+    if(confirm("Starting a new game!")) reset();
   }
   if (all>0) reset();
 }
