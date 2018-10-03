@@ -13,7 +13,7 @@ async function start() {
 
     //const testagain = test.reshape([,2,3,3]);
     //load the model 
-    model = await tf.loadModel('model/model.json');
+    model = await tf.loadModel('tfjs/model.json');
     
     //warm up 
     const output = model.predict(test);
