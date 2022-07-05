@@ -1,0 +1,7 @@
+$ mkdir exposed-git
+
+$ cd exposed-git
+
+$ git init
+
+$ echo "<h1>I will be hacked soon!</h1>" > index.php
